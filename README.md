@@ -5,7 +5,7 @@ Serious SQL is a Data With Danny Virtual Data Apprenticeship Program delivered b
 
 The program contents can be viewed [here](https://www.datawithdanny.com/courses/serious-sql).
 
-## 📑 Table of Contents
+## 📚 Table of Contents
 
 - Data Exploration
   - Exercises - The exercise queries can be found [here]
