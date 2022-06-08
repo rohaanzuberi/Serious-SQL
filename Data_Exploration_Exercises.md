@@ -14,4 +14,18 @@ FROM dvd_rentals.category
 ORDER BY category_id DESC
 LIMIT 1;
 ```
-![](images/Exercise_1.jpeg)
+![](Images/Exercise_1.jpeg)
+
+### Question 2. For the films with the longest length, what is the title of the “R” rated film with the lowest replacement_cost in dvd_rentals.film table?
+
+```SQL
+/* Filter results by 'R' rating, sort results for longest to shortest length and least to most replacement cost */
+SELECT  title
+       ,replacement_cost
+       ,length
+FROM dvd_rentals.film
+WHERE rating = 'R'
+ORDER BY length DESC, replacement_cost
+LIMIT 1;
+```
+![](Images/Exercise_2.jpeg)
