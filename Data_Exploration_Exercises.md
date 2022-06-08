@@ -70,3 +70,15 @@ GROUP BY  actor_id
 ORDER BY unique_film DESC
 LIMIT 1;
 ```
+![](Images/S2_Q1.jpeg)
+
+### Question 2. How many distinct fid values are there for the 3rd most common price value in the dvd_rentals.nicer_but_slower_film_list table?
+
+```SQL
+/* Counting the distinct fid values and grouping by price, followed by ordering by descending values to identify the 3rd most common fid value */
+SELECT  price
+       ,COUNT(DISTINCT fid) AS fid_values
+FROM dvd_rentals.nicer_but_slower_film_list
+GROUP BY  price
+ORDER BY fid_values DESC;
+```
