@@ -28,7 +28,8 @@ WHERE rating = 'R'
 ORDER BY length DESC, replacement_cost
 LIMIT 1;
 ```
-![](Images/Exercise_2.jpeg)
+![](Images/Exercise_2.jpeg)![Excercise_2](https://user-images.githubusercontent.com/103615594/172679760-870ee5f6-30d8-4da1-bc44-eece570c7e82.jpeg)
+
 
 ### Question 3. Who was the manager of the store WITH the highest total_sales IN the dvd_rentals.sales_by_store table?
 
@@ -52,4 +53,5 @@ FROM dvd_rentals.address
 ORDER BY city_id DESC
 LIMIT 5 -- to show only the top 5 cities WITH highest city_id;
 ```
-![](Images/Exercise_4.jpeg)
+![](Images/Exercise_4.jpeg)![Excercise_4](https://user-images.githubusercontent.com/103615594/172679577-10253965-a1b2-4e46-b826-02e537a9fdf4.jpeg)
+
