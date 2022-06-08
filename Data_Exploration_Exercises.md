@@ -82,3 +82,7 @@ FROM dvd_rentals.nicer_but_slower_film_list
 GROUP BY  price
 ORDER BY fid_values DESC;
 ```
+![](Images/S2_Q2.jpeg)
+
+### Question 3. How many unique country_id values exist in the dvd_rentals.city table?
+
