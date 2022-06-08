@@ -29,3 +29,27 @@ ORDER BY length DESC, replacement_cost
 LIMIT 1;
 ```
 ![](Images/Exercise_2.jpeg)
+
+### Question 3. Who was the manager of the store WITH the highest total_sales IN the dvd_rentals.sales_by_store table?
+
+```SQL
+/* Sorting total sales in DESC and LIMIT 1 to show only the manager with highest total_sales */
+SELECT  manager
+       ,total_sales
+FROM dvd_rentals.sales_by_store
+ORDER BY total_sales DESC
+LIMIT 1 -- to show only the manager with highest total_sales;
+```
+![](Images/Exercise_3.jpeg)
+
+### Question 4. What is the postal_code of the city WITH the 5th highest city_id IN the dvd_rentals.address table?
+
+```SQL
+/* Sorting results to show CITY_ID in DESC order and LIMIT 5 to identify the 5th highest CITY_ID */
+SELECT  postal_code
+       ,city_id
+FROM dvd_rentals.address
+ORDER BY city_id DESC
+LIMIT 5 -- to show only the top 5 cities WITH highest city_id;
+```
+![](Images/Exercise_4.jpeg)
