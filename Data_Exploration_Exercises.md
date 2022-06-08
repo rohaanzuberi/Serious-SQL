@@ -84,5 +84,7 @@ ORDER BY fid_values DESC;
 ```
 ![](Images/S2_Q2.jpeg)
 
+In this case, there are 323 distinct fid values in the 3rd most common price value of 2.99
+
 ### Question 3. How many unique country_id values exist in the dvd_rentals.city table?
 
