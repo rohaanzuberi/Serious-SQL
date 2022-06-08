@@ -8,7 +8,7 @@ The program contents can be viewed [here](https://www.datawithdanny.com/courses/
 ## 📚 Table of Contents
 
 - Data Exploration
-  - Exercises - The exercise queries can be found [here](Serious_SQL/Data_Exploration_Exercises.md)
+  - Exercises - The exercise queries can be found [here](Data_Exploration_Exercises.md)
 - Marketing Analytics Case Study
 - People Analytics Case Study
 - Additional SQL Techniques
