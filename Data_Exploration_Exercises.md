@@ -60,6 +60,13 @@ In this case, the postal_code is 31390.
 
 ## 📌 Record Counts & Distinct Values
 
+### Question 1. Which actor_id has the most number of unique film_id records in the dvd_rentals.film_actor table?
 
-
-
+```SQL
+SELECT  actor_id
+       ,COUNT(DISTINCT film_id) AS unique_film
+FROM dvd_rentals.film_actor
+GROUP BY  actor_id
+ORDER BY unique_film DESC
+LIMIT 1;
+```
