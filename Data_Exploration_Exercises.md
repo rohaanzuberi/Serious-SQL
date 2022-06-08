@@ -55,3 +55,4 @@ LIMIT 5 -- to show only the top 5 cities WITH highest city_id;
 ```
 ![](Images/Exercise_4.jpeg)![Excercise_4](https://user-images.githubusercontent.com/103615594/172679577-10253965-a1b2-4e46-b826-02e537a9fdf4.jpeg)
 
+In this case, the postal_code is 31390.
