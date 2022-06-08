@@ -2,7 +2,7 @@
 
 ## 🔎 Data Exploration
 
-📌 Select & Sort Data
+### 📌 Select & Sort Data
 
 ### Question 1. What is the name of the category WITH the highest category_id IN the dvd_rentals.category table?
 
