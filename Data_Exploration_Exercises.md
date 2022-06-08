@@ -14,4 +14,4 @@ FROM dvd_rentals.category
 ORDER BY category_id DESC
 LIMIT 1;
 ```
-![](images/Exercise_1.jpg)
+![](images/Exercise_1.jpeg)
