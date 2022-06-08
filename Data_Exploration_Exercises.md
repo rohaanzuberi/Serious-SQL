@@ -4,8 +4,10 @@
 
 📌 Select & Sort Data
 
+### Question 1. What is the name of the category WITH the highest category_id IN the dvd_rentals.category table?
+
 ```SQL
-/* Q1. What is the name of the category WITH the highest category_id IN the dvd_rentals.category table? */
+/* Using ORDER BY DESC to sort the data and LIMIT function to show only the highest outcome */
 SELECT  name
        ,category_id
 FROM dvd_rentals.category
