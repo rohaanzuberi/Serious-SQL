@@ -6,7 +6,7 @@ For context, this real world messy dataset captures data taken from individuals 
 
 For example, multiple measurements can be taken on the same day at different times, but certain information is missing as the log_date column does not show timestamp values!
 
-The dataset consists of two tables - **user_logs** and **users**. For this section the **user_log** table was used.
+The dataset consists of two tables - `user_logs` and `users`. For this section the `user_log` table was used.
 
 | Field | Type |
 | --- | --- |
@@ -42,7 +42,7 @@ FROM health.user_logs;
 
 ### Unique Column Counts
 
-Using the COUNT DISTINCT function to identify the unique ID values
+Using the `COUNT (DISTINCT)` function to identify the unique ID values
 
 ```SQL
 SELECT COUNT(DISTINCT id)
@@ -52,7 +52,7 @@ FROM health.user_logs;
 
 ### Single Column Frequency Counts
 
-Inspecting the **measure** column to understand the frequency of measure values
+Inspecting the `measure` column to understand the frequency of measure values
 
 ```SQL
 SELECT
@@ -67,7 +67,7 @@ SELECT
   ```
   ![](Images/S3_P4.jpeg)
   
-  Inspecting the **id** column as well
+  Inspecting the `id` column as well
   
   ```SQL
   SELECT
@@ -128,9 +128,9 @@ LIMIT 5;
 
 ### Deeper dive into specific values
 
-As it can be seen that there are many 0 values there for the "measure_value" field and null values for both "systolic" and "diastolic" columns.
+As it can be seen that there are many 0 values there for the `measure_value` field and null values for both `systolic` and `diastolic` columns.
 
-To inspect these rows a bit further - a use of **WHERE** filter will be utilized to check if this only happens for certain measure values when the condition measure_value = 0 is met and the systolic and diastolic columns are null.
+To inspect these rows a bit further - a use of `WHERE` filter will be utilized to check if this only happens for certain measure values when the condition `measure_value = 0` is met and the `systolic` and `diastolic`columns are `NULL`.
 
 ```SQL
 SELECT
@@ -143,9 +143,9 @@ LIMIT 5;
 ```
 ![](Images/S3_P9.jpeg)
 
-When comparing the results with the frequency percentage calculated above it can be seen that most "measure_value = 0" are occurring when the "measure = blood_pressure" as 562 out of 2417 entries are 0. While "measure = blood_glucose" has 8 "measure_value = 0" values out of 38692 entries and "measure = weight" has 2 entries with "measure_value = 0" out of 2782 frequency value.
+When comparing the results with the frequency percentage calculated above it can be seen that most `measure_value = 0` are occurring when the `measure = blood_pressure` as 562 out of 2417 entries are 0. While `measure = blood_glucose` has 8 `measure_value = 0` values out of 38692 entries and `measure = weight` has 2 entries with `measure_value = 0` out of 2782 frequency value.
 
-Digging in further for "measure = blood_pressure" to inspect the values:
+Digging in further for `measure = blood_pressure` to inspect the values:
 
 ```SQL
 SELECT *
@@ -156,9 +156,9 @@ LIMIT 10;
 ```
 ![](Images/S3_P10.jpeg)
 
-It is understood that when "measure_value = 0" then values for "systolic" and "diastolic" are captured with valid information.
+It is understood that when `measure_value = 0` then values for `systolic` and `diastolic` are captured with valid information.
 
-But what if "measure_value != 0", the query was altered to obtain the results for further inspection:
+But what if `measure_value != 0`, the query was altered to obtain the results for further inspection:
 
 ```SQL
 SELECT *
@@ -169,9 +169,9 @@ LIMIT 10;
 ```
 ![](Images/S3_P11.jpeg)
 
-It is apparent that "systolic" values are sometimes recorded as "measure_value" which is sometimes recorded as 0.
+It is apparent that `systolic` values are sometimes recorded as `measure_value` which is sometimes recorded as 0.
 
-The final step in this inspection stage would be to analyze the NULL values in "systolic" and "diastolic" columns using the WHERE statement:
+The final step in this inspection stage would be to analyze the `NULL` values in `systolic` and `diastolic` columns using the WHERE statement:
 
 ```SQL
 SELECT
@@ -184,7 +184,7 @@ LIMIT 10;
 ```
 ![](Images/S3_P12.jpeg)
 
-Looking at the result it is confirmed that there are NO-NULL records for "systolic" only when "measure = blood_pressure".
+Looking at the result it is confirmed that there are NO-NULL records for `systolic` only when `measure = blood_pressure`.
 
 ```SQL
 SELECT
