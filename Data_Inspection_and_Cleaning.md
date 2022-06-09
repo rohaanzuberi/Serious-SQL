@@ -80,7 +80,8 @@ SELECT
     ORDER BY percentage DESC
     LIMIT 10;
   ```
-  ![](Images/S3_P5.jpeg)
+  ![S3_P5](https://user-images.githubusercontent.com/103615594/172887349-7102b325-3997-4ba7-95eb-062e61d24703.jpeg)
+
   
   ### Individual Column Distributions
   
@@ -97,7 +98,7 @@ GROUP BY measure_value
 ORDER BY frequency DESC
 LIMIT 5;
 ```
-
+![](Images/S3_P6.jpeg)
 
 ### Systolic Column
 
@@ -110,7 +111,7 @@ GROUP BY systolic
 ORDER BY frequency DESC
 LIMIT 5;
 ```
-
+![](Images/S3_P7.jpeg)
 
 ### Diastolic Column
 
@@ -123,7 +124,7 @@ GROUP BY diastolic
 ORDER BY frequency DESC
 LIMIT 5;
 ```
-
+![](Images/S3_P8.jpeg)
 
 ### Deeper dive into specific values
 
