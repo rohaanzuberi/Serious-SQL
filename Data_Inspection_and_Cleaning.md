@@ -52,3 +52,23 @@ FROM health.user_logs;
 
 ### Single Column Frequency Counts
 
+Inspecting the **measure** column to understand the frequency of measure values
+
+```SQL
+SELECT
+  measure,
+  COUNT(*) AS frequency,
+  ROUND(
+    100 * COUNT(*) / SUM(COUNT(*)) OVER (), 2)
+    AS percentage
+  FROM health.user_logs
+  GROUP BY measure
+  ORDER BY frequency DESC;
+  ```
+  
+  
+  Inspecting the **id** column as well
+  
+  
+  
+  ### ABC
