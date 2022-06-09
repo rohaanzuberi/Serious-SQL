@@ -88,3 +88,28 @@ In this case, there are 323 distinct fid values in the 3rd most common price val
 
 ### Question 3. How many unique country_id values exist in the dvd_rentals.city table?
 
+```SQL
+SELECT  COUNT(DISTINCT country_id)
+FROM dvd_rentals.city;
+```
+![](Images/S2_Q3.jpeg)
+
+### Question 4. What percentage of overall total_sales does the Sports category make up in the dvd_rentals.sales_by_film_category table?
+
+```SQL
+SELECT  category
+       ,ROUND( 100 * total_sales::NUMERIC / SUM(total_sales) OVER (),2 ) AS percentage
+FROM dvd_rentals.sales_by_film_category;
+```
+![](Images/S2_Q4.jpeg)
+
+### Question 5. What percentage of unique fid values are in the Children category in the dvd_rentals.film_list table?
+
+```SQL
+SELECT  category
+       ,ROUND( 100 * COUNT(DISTINCT fid)::NUMERIC / SUM(COUNT(DISTINCT fid)) OVER (),2 ) AS percentage
+FROM dvd_rentals.film_list
+GROUP BY  category
+ORDER BY category;
+```
+![](Images/S2_Q5.jpeg)
