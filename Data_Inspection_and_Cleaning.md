@@ -65,7 +65,7 @@ SELECT
   GROUP BY measure
   ORDER BY frequency DESC;
   ```
-  
+  ![](Images/S3_P4.jpeg)
   
   Inspecting the **id** column as well
   
@@ -80,6 +80,6 @@ SELECT
     ORDER BY percentage DESC
     LIMIT 10;
   ```
-  
+  ![](Images/S3_P5.jpeg)
   
   ### ABC
