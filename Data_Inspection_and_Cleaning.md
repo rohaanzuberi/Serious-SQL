@@ -199,7 +199,7 @@ LIMIT 10;
 
 The results confirm the observations.
 
-## 🗣 TL;DR as an additional task activity: Sharing insights with colleague through a short email
+## 🗣 TL;DR in the form of sharing insights with colleague through a short email
 
 > ***"Rohaan, I need your help urgently - we just received this user_logs dataset, can you let me know what you find?"***
 
