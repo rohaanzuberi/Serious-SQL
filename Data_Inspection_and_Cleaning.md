@@ -141,7 +141,7 @@ WHERE measure_value = 0
 GROUP BY measure
 LIMIT 5;
 ```
-
+![](Images/S3_P9.jpeg)
 
 When comparing the results with the frequency percentage calculated above it can be seen that most "measure_value = 0" are occurring when the "measure = blood_pressure" as 562 out of 2417 entries are 0. While "measure = blood_glucose" has 8 "measure_value = 0" values out of 38692 entries and "measure = weight" has 2 entries with "measure_value = 0" out of 2782 frequency value.
 
@@ -154,7 +154,7 @@ WHERE measure_value = 0
 AND measure = 'blood_pressure'
 LIMIT 10;
 ```
-
+![](Images/S3_P10.jpeg)
 
 It is understood that when "measure_value = 0" then values for "systolic" and "diastolic" are captured with valid information.
 
@@ -167,7 +167,7 @@ WHERE measure_value != 0
 AND measure = 'blood_pressure'
 LIMIT 10;
 ```
-
+![](Images/S3_P11.jpeg)
 
 It is apparent that "systolic" values are sometimes recorded as "measure_value" which is sometimes recorded as 0.
 
@@ -182,6 +182,7 @@ WHERE systolic IS NULL
 GROUP BY measure
 LIMIT 10;
 ```
+![](Images/S3_P12.jpeg)
 
 Looking at the result it is confirmed that there are NO-NULL records for "systolic" only when "measure = blood_pressure".
 
@@ -194,6 +195,11 @@ WHERE diastolic IS NULL
 GROUP BY measure
 LIMIT 10;
 ```
-
+![](Images/S3_P12.jpeg)
 
 The results confirm the observations.
+
+## 🗣 Additional task: Sharing insights with colleague through a short email
+
+# ***"Rohaan, I need your help urgently - we just received this user_logs dataset, can you let me know what you find?"***
+
