@@ -203,3 +203,24 @@ The results confirm the observations.
 
 > ***"Rohaan, I need your help urgently - we just received this user_logs dataset, can you let me know what you find?"***
 
+> Dear Colleague,
+> 
+> Following are the analysis findings on the `user_logs` dataset:
+> - The data consists of the following fields:
+> 	- Patient id as `id`
+> 	- `log_date` for entries
+> 	- `measure` records consisting of blood_glucose, blood_pressure and weight data
+> 	- `measure_value` for the corresponding measure
+> 	- Record of `systolic` value
+> 	- Record of `diastolic` value
+> - There are **43891 records** within the dataset with entries on **554 different patients**
+> - The most recorded `measure` is **blood_glucose** with **38692 entries** i.e. **88.15%** of total entries
+> - The most frequent `measure_value` is `0` at **572 entries**
+> - `systolic` field has **26023** `NULL` and **15451** `0` value entries
+> - `diastolic` field consists of **26023** `NULL` and **15449** `0` value entries
+> - Findings indicate that most of the `measure_value = 0` happen when `measure = blood_pressure`.
+> - For cases where **`measure_value != 0`** then `systolic` values are recorded within the `measure_value` field. This finding is substantiated with the fact that `systolic` and `diastolic` fields only have non-null records when `measure = blood_pressure`.
+> 
+> Best Regards,
+> 
+> Rohaan
