@@ -113,3 +113,7 @@ GROUP BY  category
 ORDER BY category;
 ```
 ![](Images/S2_Q5.jpeg)
+
+## 📌 Identifying Duplicate Records
+
+### Question 1. 
