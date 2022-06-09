@@ -82,4 +82,49 @@ SELECT
   ```
   ![](Images/S3_P5.jpeg)
   
-  ### ABC
+  ### Individual Column Distributions
+  
+  Identifying the most recurring values within each column
+  
+  ### Measure Column
+  
+  ```SQL
+  SELECT
+  measure_value,
+  COUNT(*) AS frequency
+FROM health.user_logs
+GROUP BY measure_value
+ORDER BY frequency DESC
+LIMIT 5;
+```
+
+
+### Systolic Column
+
+```SQL
+SELECT
+  systolic,
+  COUNT(*) AS frequency
+FROM health.user_logs
+GROUP BY systolic
+ORDER BY frequency DESC
+LIMIT 5;
+```
+
+
+### Diastolic Column
+
+```SQL
+SELECT
+  diastolic,
+  COUNT(*) AS frequency
+FROM health.user_logs
+GROUP BY diastolic
+ORDER BY frequency DESC
+LIMIT 5;
+```
+
+
+### Deeper dive into specific values
+
+
