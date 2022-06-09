@@ -128,4 +128,72 @@ LIMIT 5;
 
 ### Deeper dive into specific values
 
+As it can be seen that there are many 0 values there for the "measure_value" field and null values for both "systolic" and "diastolic" columns.
 
+To inspect these rows a bit further - a use of **WHERE** filter will be utilized to check if this only happens for certain measure values when the condition measure_value = 0 is met and the systolic and diastolic columns are null.
+
+```SQL
+SELECT
+  measure,
+  COUNT(*)
+FROM health.user_logs
+WHERE measure_value = 0
+GROUP BY measure
+LIMIT 5;
+```
+
+
+When comparing the results with the frequency percentage calculated above it can be seen that most "measure_value = 0" are occurring when the "measure = blood_pressure" as 562 out of 2417 entries are 0. While "measure = blood_glucose" has 8 "measure_value = 0" values out of 38692 entries and "measure = weight" has 2 entries with "measure_value = 0" out of 2782 frequency value.
+
+Digging in further for "measure = blood_pressure" to inspect the values:
+
+```SQL
+SELECT *
+FROM health.user_logs
+WHERE measure_value = 0
+AND measure = 'blood_pressure'
+LIMIT 10;
+```
+
+
+It is understood that when "measure_value = 0" then values for "systolic" and "diastolic" are captured with valid information.
+
+But what if "measure_value != 0", the query was altered to obtain the results for further inspection:
+
+```SQL
+SELECT *
+FROM health.user_logs
+WHERE measure_value != 0
+AND measure = 'blood_pressure'
+LIMIT 10;
+```
+
+
+It is apparent that "systolic" values are sometimes recorded as "measure_value" which is sometimes recorded as 0.
+
+The final step in this inspection stage would be to analyze the NULL values in "systolic" and "diastolic" columns using the WHERE statement:
+
+```SQL
+SELECT
+  measure,
+  COUNT(*)
+FROM health.user_logs
+WHERE systolic IS NULL
+GROUP BY measure
+LIMIT 10;
+```
+
+Looking at the result it is confirmed that there are NO-NULL records for "systolic" only when "measure = blood_pressure".
+
+```SQL
+SELECT
+  measure,
+  COUNT(*)
+FROM health.user_logs
+WHERE diastolic IS NULL
+GROUP BY measure
+LIMIT 10;
+```
+
+
+The results confirm the observations.
