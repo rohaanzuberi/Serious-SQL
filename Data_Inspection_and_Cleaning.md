@@ -28,7 +28,7 @@ SELECT *
 FROM health.user_logs
 LIMIT 10;
 ```
-
+![](Images/S3_P1.jpeg)
 
 ### Record Counts
 
@@ -38,7 +38,7 @@ Checking the count of the data
 SELECT COUNT(*)
 FROM health.user_logs;
 ```
-
+![](Images/S3_P2.jpeg)
 
 ### Unique Column Counts
 
@@ -48,7 +48,7 @@ Using the COUNT DISTINCT function to identify the unique ID values
 SELECT COUNT(DISTINCT id)
 FROM health.user_logs;
 ```
-
+![](Images/S3_P3.jpeg)
 
 ### Single Column Frequency Counts
 
