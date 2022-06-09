@@ -19,7 +19,7 @@ The dataset consists of two tables - **user_logs** and **users**. For this secti
 
 Following are the activities carried out to deal with the messy dataset:
 
-### Data Inspection
+## 📌 Data Inspection
 
 Before dealing with duplicate data it is important to understand the dataset by carrying out inspection.
 
@@ -83,7 +83,7 @@ SELECT
   ![S3_P5](https://user-images.githubusercontent.com/103615594/172887349-7102b325-3997-4ba7-95eb-062e61d24703.jpeg)
 
   
-  ### Individual Column Distributions
+  ## 📌 Individual Column Distributions
   
   Identifying the most recurring values within each column
   
