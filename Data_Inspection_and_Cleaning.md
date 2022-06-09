@@ -71,14 +71,14 @@ SELECT
   
   ```SQL
   SELECT
-  id,
-  COUNT(*) AS frequency,
-  ROUND(
-    100 * COUNT(*) / SUM(COUNT(*)) OVER(), 2) AS percentage
-  FROM health.user_logs
-  GROUP BY id
-  ORDER BY percentage DESC
-  LIMIT 10;
+    id,
+    COUNT(*) AS frequency,
+    ROUND(
+      100 * COUNT(*) / SUM(COUNT(*)) OVER(), 2) AS percentage
+    FROM health.user_logs
+    GROUP BY id
+    ORDER BY percentage DESC
+    LIMIT 10;
   ```
   
   
