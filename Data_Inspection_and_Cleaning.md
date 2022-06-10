@@ -1,7 +1,5 @@
 # 🔎 Data Exploration
 
-## 🧼 Data Inspection and Cleaning
-
 For context, this real world messy dataset captures data taken from individuals logging their measurements via an online portal throughout the day.
 
 For example, multiple measurements can be taken on the same day at different times, but certain information is missing as the log_date column does not show timestamp values!
@@ -21,7 +19,7 @@ Following are the activities carried out to explore the messy dataset:
 
 ## 📌 Data Inspection
 
-Before dealing with duplicate data it is important to understand the dataset by carrying out inspection.
+Before dealing with any duplicate data it is important to understand the dataset by carrying out inspection.
 
 ```SQL
 SELECT *
@@ -237,3 +235,34 @@ FROM deduped_log;
 ![](Images/S3_P13.jpeg)
 
 It can be seen that there are duplicate records as the original table had 43891 count of records, however only 31004 are distinct.
+
+
+```SQL
+WITH groupby_counts AS (
+  SELECT
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic,
+    COUNT(*) AS frequency
+  FROM health.user_logs
+  GROUP BY
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic)
+SELECT *
+FROM groupby_counts
+WHERE frequency > 1 -- filtering for duplicate entries only
+ORDER BY frequency DESC
+LIMIT 10;
+```
+
+
+From the outcome it can be seen that there are multiple entries that have been duplicated.
+
+In the context of this exploration, the duplicates will not be removed as it may be possible that they are valid data points captured with certain missing information such as the timestamp within the `log_date` column.
