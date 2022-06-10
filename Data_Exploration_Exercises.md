@@ -1,4 +1,4 @@
-# 👨‍💻 Serious SQL
+# 👨‍💻 Serious SQL Exercises
 
 # 🔎 Data Exploration
 
