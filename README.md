@@ -8,7 +8,7 @@ The program contents can be viewed [here](https://www.datawithdanny.com/courses/
 ## 📚 Table of Contents
 
 - Data Exploration
-  - Dataset Inspection - Dataset inspection and analysis queries can be found [here]
+  - Dataset Inspection - Inspection of a health dataset and the findings can be found [here](Dataset_Inspection.md).
   - Exercises - The exercise queries can be found [here](Data_Exploration_Exercises.md).
 - Marketing Analytics Case Study
 - People Analytics Case Study
