@@ -261,7 +261,7 @@ WHERE frequency > 1 -- filtering for duplicate entries only
 ORDER BY frequency DESC
 LIMIT 10;
 ```
-
+![](Images/S3_P14.jpeg)
 
 From the outcome it can be seen that there are multiple entries that have been duplicated.
 
