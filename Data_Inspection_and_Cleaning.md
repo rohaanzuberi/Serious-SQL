@@ -234,6 +234,6 @@ The results confirm the observations.
 SELECT COUNT(*)
 FROM deduped_log;
 ```
-
+![](Images/S3_P13.jpeg)
 
 It can be seen that there are duplicate records as the original table had 43891 count of records, however only 31004 are distinct.
