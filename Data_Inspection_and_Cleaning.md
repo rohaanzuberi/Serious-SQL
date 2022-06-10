@@ -17,7 +17,7 @@ The dataset consists of two tables - `user_logs` and `users`. For this section t
 | systolic | numeric |
 | diastolic | numeric |
 
-Following are the activities carried out to deal with the messy dataset:
+Following are the activities carried out to explore the messy dataset:
 
 ## 📌 Data Inspection
 
@@ -224,3 +224,16 @@ The results confirm the observations.
 > Best Regards,
 > 
 > Rohaan
+
+  ## 📌 Detecting Duplicate Records
+  
+  ```SQL
+  WITH deduped_log AS (
+  SELECT DISTINCT *
+  FROM health.user_logs)
+SELECT COUNT(*)
+FROM deduped_log;
+```
+
+
+It can be seen that there are duplicate records as the original table had 43891 count of records, however only 31004 are distinct.
