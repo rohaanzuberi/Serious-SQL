@@ -1,4 +1,4 @@
-# 🔎 Data Exploration
+# 🔎 Dataset Exploration
 
 For context, this real world messy dataset captures data taken from individuals logging their measurements via an online portal throughout the day.
 
