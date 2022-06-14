@@ -13,5 +13,5 @@ The program contents can be viewed [here](https://www.datawithdanny.com/courses/
 - Marketing Analytics Case Study [Ongoing]
 - People Analytics Case Study [Ongoing]
 - Additional SQL Techniques
-  - Exercises - The exercise queries can be found [here]
+  - Exercises - The exercise queries can be found [here](Data_Exploration_Exercises.md)
 - 8 week SQL challenge - The repository can be found [here]
