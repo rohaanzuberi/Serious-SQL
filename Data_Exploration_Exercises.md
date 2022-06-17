@@ -181,6 +181,19 @@ LIMIT 10;
 
 ### Question 3. Which measure_value had the most occurences in the health.user_logs value when measure = 'weight'?
 ```SQL
+SELECT
+  measure_value,
+  COUNT(*) AS frequency
+FROM health.user_logs
+WHERE measure = 'weight'
+GROUP BY measure_value
+ORDER BY frequency DESC
+LIMIT 5;
+```
+
+
+### Question 4. How many single duplicated rows exist when measure = 'blood_pressure' in the health.user_logs? How about the total number of duplicate records in the same table?
+```SQL
 WITH groupby_counts AS (
   SELECT
     id,
@@ -205,10 +218,6 @@ SELECT
 FROM groupby_counts
 WHERE frequency > 1;
 ```
-
-
-### Question 4. How many single duplicated rows exist when measure = 'blood_pressure' in the health.user_logs? How about the total number of duplicate records in the same table?
-
 
 
 ### Question 5. What percentage of records measure_value = 0 when measure = 'blood_pressure' in the health.user_logs table? How many records are there also for this same condition?
