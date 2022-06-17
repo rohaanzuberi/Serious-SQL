@@ -117,17 +117,94 @@ ORDER BY category;
 ## 📌 Identifying Duplicate Records
 
 ### Question 1. Which id value has the most number of duplicate records in the health.user_logs table?
-
+```SQL
+WITH groupby_counts AS (
+SELECT
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic,
+    COUNT(*) AS frequency
+  FROM health.user_logs
+  GROUP BY
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic)
+SELECT
+  id,
+  SUM(frequency) AS total_duplicate_rows
+FROM groupby_counts
+WHERE frequency > 1
+GROUP BY id
+ORDER BY total_duplicate_rows DESC
+LIMIT 10;
+```
 
 
 
 ### Question 2. Which log_date value had the most duplicate records after removing the max duplicate id value from question 1?
-
+```SQL
+WITH groupby_counts AS(
+SELECT
+  id,
+  log_date,
+  measure,
+  measure_value,
+  systolic,
+  diastolic,
+  COUNT(*) AS groupby_frequency
+FROM health.user_logs
+WHERE id != '054250c692e07a9fa9e62e345231df4b54ff435d'
+GROUP BY
+  id,
+  log_date,
+  measure,
+  measure_value,
+  systolic,
+  diastolic)
+SELECT
+  log_date,
+  SUM(groupby_frequency) AS frequency
+FROM groupby_counts
+WHERE groupby_frequency > 1
+GROUP BY log_date
+ORDER BY frequency DESC
+LIMIT 10;
+```
 
 
 
 ### Question 3. Which measure_value had the most occurences in the health.user_logs value when measure = 'weight'?
-
+```SQL
+WITH groupby_counts AS (
+  SELECT
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic,
+    COUNT(*) AS frequency
+  FROM health.user_logs
+  WHERE measure = 'blood_pressure'
+  GROUP BY
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic)
+SELECT
+  COUNT(*) as single_duplicate_rows,
+  SUM(frequency) as total_duplicate_records
+FROM groupby_counts
+WHERE frequency > 1;
+```
 
 
 ### Question 4. How many single duplicated rows exist when measure = 'blood_pressure' in the health.user_logs? How about the total number of duplicate records in the same table?
