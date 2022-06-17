@@ -221,7 +221,55 @@ WHERE frequency > 1;
 
 
 ### Question 5. What percentage of records measure_value = 0 when measure = 'blood_pressure' in the health.user_logs table? How many records are there also for this same condition?
-
+```SQL
+WITH all_measure_values AS (
+  SELECT
+    measure_value,
+    COUNT(*) AS total_records,
+    SUM(COUNT(*)) OVER () AS overall_total
+  FROM health.user_logs
+  WHERE measure = 'blood_pressure'
+  GROUP BY 1
+)
+SELECT
+  measure_value,
+  total_records,
+  overall_total,
+  ROUND(100 * total_records::NUMERIC / overall_total, 2) AS percentage
+FROM all_measure_values
+WHERE measure_value = 0;
+```
 
 
 ### Question 6. What percentage of records are duplicates in the health.user_logs table?
+```SQL
+WITH groupby_counts AS (
+  SELECT
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic,
+    COUNT(*) AS frequency
+  FROM health.user_logs
+  GROUP BY
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic
+)
+SELECT
+  -- Need to subtract 1 from the frequency to count actual duplicates!
+  -- Also don't forget about the integer floor division!
+  ROUND(
+    100 * SUM(CASE
+        WHEN frequency > 1 THEN frequency - 1
+        ELSE 0 END
+    )::NUMERIC / SUM(frequency),
+    2
+  ) AS duplicate_percentage
+FROM groupby_counts;
+```
