@@ -144,7 +144,7 @@ GROUP BY id
 ORDER BY total_duplicate_rows DESC
 LIMIT 10;
 ```
-
+![](Images/S3_Q1.jpeg)
 
 
 ### Question 2. Which log_date value had the most duplicate records after removing the max duplicate id value from question 1?
@@ -176,7 +176,7 @@ GROUP BY log_date
 ORDER BY frequency DESC
 LIMIT 10;
 ```
-
+![](Images/S3_Q2.jpeg)
 
 
 ### Question 3. Which measure_value had the most occurences in the health.user_logs value when measure = 'weight'?
@@ -190,7 +190,7 @@ GROUP BY measure_value
 ORDER BY frequency DESC
 LIMIT 5;
 ```
-
+![](Images/S3_Q3.jpeg)
 
 ### Question 4. How many single duplicated rows exist when measure = 'blood_pressure' in the health.user_logs? How about the total number of duplicate records in the same table?
 ```SQL
@@ -218,7 +218,7 @@ SELECT
 FROM groupby_counts
 WHERE frequency > 1;
 ```
-
+![](Images/S3_Q4.jpeg)
 
 ### Question 5. What percentage of records measure_value = 0 when measure = 'blood_pressure' in the health.user_logs table? How many records are there also for this same condition?
 ```SQL
@@ -239,7 +239,7 @@ SELECT
 FROM all_measure_values
 WHERE measure_value = 0;
 ```
-
+![](Images/S3_Q5.jpeg)
 
 ### Question 6. What percentage of records are duplicates in the health.user_logs table?
 ```SQL
@@ -271,3 +271,4 @@ SELECT
   ) AS duplicate_percentage
 FROM groupby_counts;
 ```
+![](Images/S3_Q6.jpeg)
