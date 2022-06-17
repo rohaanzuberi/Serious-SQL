@@ -262,11 +262,9 @@ WITH groupby_counts AS (
     diastolic
 )
 SELECT
-  -- Need to subtract 1 from the frequency to count actual duplicates!
-  -- Also don't forget about the integer floor division!
   ROUND(
     100 * SUM(CASE
-        WHEN frequency > 1 THEN frequency - 1
+        WHEN frequency > 1 THEN frequency - 1 -- Need to subtract 1 from the frequency to count actual duplicates!
         ELSE 0 END
     )::NUMERIC / SUM(frequency),
     2
